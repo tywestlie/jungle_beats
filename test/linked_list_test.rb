@@ -18,7 +18,36 @@ class TestLinkedList < Minitest::Test
   end
 
   def test_append
-    link = LinkedList.new
+    list = LinkedList.new
+    
+    list.append("doop")
+
+    assert_equal "doop", list.head.data
+    assert_instance_of Node, list.head
+  end
+
+  def test_next_node_nil
+    list = LinkedList.new
+
+    list.append("plop")
+
+    assert_nil list.head.next_node
+  end
+
+  def test_count
+    list = LinkedList.new
+
+    list.append("bop")
+
+    assert_equal 1 , list.count
+  end
+
+  def test_to_string
+    list = LinkedList.new
+
+    list.append ("derp")
+
+    assert_equal "derp", list.to_string
   end
 
 end
