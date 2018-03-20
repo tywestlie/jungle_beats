@@ -7,15 +7,18 @@ class LinkedList
   def initialize
     @head = nil
     @count = 0
+    current = @head
   end
 
   def append(data)
-    @count += 1
     @head = Node.new(data)
+    # if count is > 1
+    # create new instance of node with data
+    #
   end
 
   def to_string
     return head.data
   end
-  
+
 end
