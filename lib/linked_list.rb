@@ -2,7 +2,7 @@ require './lib/node'
 require 'pry'
 
 class LinkedList
-  attr_reader :head, :count
+  attr_reader :head
 
   def initialize
     @head = nil
@@ -29,6 +29,13 @@ class LinkedList
   end
 
   def to_string
+    current = @head
+    sentence =  "#{current.data}"
+      (count - 1).times do
+        current = current.next_node
+        sentence.concat(" #{current.data}")
+      end
+    sentence
   end
 
 end

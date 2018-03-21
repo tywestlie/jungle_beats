@@ -35,11 +35,19 @@ class TestLinkedList < Minitest::Test
   end
 
   def test_to_string
-    skip
+
     list = LinkedList.new
 
     list.append ("derp")
+    assert_equal "derp", list.to_string
+  end
 
+  def test_to_string
+
+    list = LinkedList.new
+
+    list.append ("derp")
+    list.append ("farp")
     assert_equal "derp", list.to_string
   end
 
@@ -60,6 +68,5 @@ class TestLinkedList < Minitest::Test
 
     assert_equal 2, list.count
   end
-
 
 end
