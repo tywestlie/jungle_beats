@@ -6,19 +6,23 @@ class LinkedList
 
   def initialize
     @head = nil
-    @count = 0
-    current = @head
   end
 
   def append(data)
     @head = Node.new(data)
-    # if count is > 1
-    # create new instance of node with data
-    #
+  end
+
+  def count
+    count = 0
+    if @head.nil?
+      return nil
+    else
+      count +1
+    end
   end
 
   def to_string
-    return head.data
+     head.data
   end
 
 end

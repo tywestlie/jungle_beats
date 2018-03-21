@@ -12,14 +12,14 @@ class TestLinkedList < Minitest::Test
   end
 
   def test_head
-    link = LinkedList.new
+    list = LinkedList.new
 
-    assert_nil link.head
+    assert_nil list.head
   end
 
   def test_append
     list = LinkedList.new
-    
+
     list.append("doop")
 
     assert_equal "doop", list.head.data
@@ -34,20 +34,20 @@ class TestLinkedList < Minitest::Test
     assert_nil list.head.next_node
   end
 
-  def test_count
-    list = LinkedList.new
-
-    list.append("bop")
-
-    assert_equal 1 , list.count
-  end
-
   def test_to_string
     list = LinkedList.new
 
     list.append ("derp")
 
     assert_equal "derp", list.to_string
+  end
+
+  def test_count
+    list = LinkedList.new
+
+    list.append ("derp")
+
+    assert_equal 1, list.count
   end
 
 end
