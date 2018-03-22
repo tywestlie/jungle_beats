@@ -18,9 +18,25 @@ class LinkedList
     end
   end
 
+  def prepend(data)
+    old_head = @head
+    @head = Node.new(data)
+    @head.next_node = old_head
+  end
+
+  def insert(position, data)
+    current = @head
+    posi = position.times do
+      current = current.next_node
+    end
+    new_node = Node.new(data)
+    new_node.next_node = posi.next_node
+    current.next_node = new_node
+  end
+
   def count
    current = @head
-   counter = 1
+   counter = 0
      until current.next_node.nil?
        current = current.next_node
        counter += 1
@@ -31,7 +47,7 @@ class LinkedList
   def to_string
     current = @head
     sentence =  "#{current.data}"
-      (count - 1).times do
+      count.times do
         current = current.next_node
         sentence.concat(" #{current.data}")
       end
