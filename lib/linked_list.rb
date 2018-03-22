@@ -26,28 +26,32 @@ class LinkedList
 
   def insert(position, data)
     current = @head
-    posi = position.times do
+    (position - 1).times do
       current = current.next_node
     end
     new_node = Node.new(data)
-    new_node.next_node = posi.next_node
+    new_node.next_node = current.next_node
     current.next_node = new_node
   end
 
   def count
-   current = @head
-   counter = 0
+    if @head.nil?
+      return nil
+    elsif
+      current = @head
+      counter = 1
      until current.next_node.nil?
        current = current.next_node
        counter += 1
      end
+   end
      counter
   end
 
   def to_string
     current = @head
     sentence =  "#{current.data}"
-      count.times do
+      (count - 1).times do
         current = current.next_node
         sentence.concat(" #{current.data}")
       end

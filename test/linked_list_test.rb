@@ -53,7 +53,7 @@ class TestLinkedList < Minitest::Test
 
     list.append("derp")
 
-    assert_equal 0, list.count
+    assert_equal 1, list.count
   end
 
   def test_count2
@@ -64,7 +64,7 @@ class TestLinkedList < Minitest::Test
     list.append("garp")
     list.append("farp")
 
-    assert_equal 3, list.count
+    assert_equal 4, list.count
   end
 
   def test_prepend
@@ -86,7 +86,7 @@ class TestLinkedList < Minitest::Test
 
     list.insert(3,"glimblop")
 
-    assert_equal "snarp darp glimblop foop doop", list.to_string
+    assert_equal "snarp darp foop glimblop doop", list.to_string
   end
 
 
